@@ -99,7 +99,7 @@ DIV.item INPUT {
 color:White; background-color: #333; border: 1px solid black; cursor:pointer;
 }
 
-/* Cart Table*/}
+/* Cart Table*/
 H2 { margin-top: 0.3em }
 TFOOT TD { border-top: 1px dotted gray; font-weight: bold; }
 tbody td.quantity { text-align: center; }
