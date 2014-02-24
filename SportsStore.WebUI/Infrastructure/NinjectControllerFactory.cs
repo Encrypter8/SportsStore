@@ -1,6 +1,7 @@
 ﻿using Moq;
 using Ninject;
 using SportsStore.Domain.Abstract;
+using SportsStore.Domain.Concrete;
 using SportsStore.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,13 @@ namespace SportsStore.WebUI.Infrastructure
 				}.AsQueryable()
 			);
 
-			NinjectKernel.Bind<IProductRepository>().ToConstant(mock.Object);
+			//
+			// Switch comments if we need to use mock data
+			//
+
+			//NinjectKernel.Bind<IProductRepository>().ToConstant(mock.Object);
+
+			NinjectKernel.Bind<IProductRepository>().To<EFProductRepository>();
 		}
 
 
