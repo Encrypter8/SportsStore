@@ -1,13 +1,25 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SportsStore.Domain.Entities;
+﻿using SportsStore.Domain.Entities;
 using System.Linq;
+using NUnit.Framework;
 
 namespace SportsStore.UnitTests
 {
-	[TestClass]
+	[TestFixture]
+	[Category("Cart Object")]
 	public class CartTests
 	{
-		[TestMethod]
+		[SetUp]
+		public void Setup()
+		{
+		}
+
+		[TearDown]
+		public void TearDown()
+		{
+		}
+
+		[Test]
+		
 		public void Can_Add_New_Lines()
 		{
 			// Arrange
@@ -28,7 +40,7 @@ namespace SportsStore.UnitTests
 			Assert.AreEqual(results[1].Product, p2);
 		}
 
-		[TestMethod]
+		[Test]
 		public void Can_Add_Quantity_For_Existing_Lines()
 		{
 			// Arrange
@@ -50,7 +62,7 @@ namespace SportsStore.UnitTests
 			Assert.AreEqual(results[1].Quantity, 1);
 		}
 
-		[TestMethod]
+		[Test]
 		public void Can_Remove_Line()
 		{
 			// Arrange
@@ -73,7 +85,7 @@ namespace SportsStore.UnitTests
 			Assert.AreEqual(target.Lines.Count(), 2);
 		}
 
-		[TestMethod]
+		[Test]
 		public void Calculate_Cart_Total()
 		{
 			// Arrange
@@ -93,7 +105,7 @@ namespace SportsStore.UnitTests
 			Assert.AreEqual(result, 450m);
 		}
 
-		[TestMethod]
+		[Test]
 		public void Can_Clear_Contents()
 		{
 			// Arrange

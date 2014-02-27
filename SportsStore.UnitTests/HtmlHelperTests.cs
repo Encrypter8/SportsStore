@@ -1,15 +1,16 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SportsStore.WebUI.HtmlHelpers;
+﻿using SportsStore.WebUI.HtmlHelpers;
 using SportsStore.WebUI.Models;
 using System;
 using System.Web.Mvc;
+using NUnit.Framework;
 
 namespace SportsStore.UnitTests
 {
-	[TestClass]
+	[TestFixture]
+	[Category("HtmlHelpers Extentions")]
 	public class HtmlHelperTests
 	{
-		[TestMethod]
+		[Test]
 		public void Can_Generate_Page_Links()
 		{
 			// Arrange - define an HTML helper - we need to this

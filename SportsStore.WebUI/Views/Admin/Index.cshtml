@@ -1,0 +1,37 @@
+﻿@using SportsStore.Domain.Entities;
+
+@model IEnumerable<Product>
+
+@{
+    ViewBag.Title = "Admin: All Products";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>All Products</h1>
+
+
+<table class="Grid">
+    <tr>
+		<th>@Html.DisplayNameFor(model => model.ProductID)</th>
+        <th>@Html.DisplayNameFor(model => model.Name)</th>
+        <th class="NumericCol">@Html.DisplayNameFor(model => model.Price)</th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (Product item in Model) {
+    <tr>
+        <td>@item.ProductID</td>
+        <td>@Html.ActionLink(item.Name, "Edit", new { item.ProductID })</td>
+        <td class="NumericCol">@item.Price.ToString("c")</td>
+        <td>
+			@using (Html.BeginForm("Delete", "Admin"))
+			{
+				@Html.Hidden("ProductID", item.ProductID)
+				<input type="submit" value="Delete" />
+			}
+        </td>
+    </tr>
+}
+
+</table>
+<p>@Html.ActionLink("Add a new Product", "Create")</p>
