@@ -21,7 +21,7 @@ namespace SportsStore.UnitTests
 		{
 			Mock = new Mock<IProductRepository>();
 			Mock.Setup(m => m.Products).Returns(new Product[] {
-				new Product { ProductID = 1, Name = "P1", Category = "Cat1" },
+				new Product { ProductID = 1, Name = "P1", Category = "Cat1", ImageData = new byte[] { }, ImageMimeType = "image/png" },
 				new Product { ProductID = 2, Name = "P2", Category = "Cat2" },
 				new Product { ProductID = 3, Name = "P3", Category = "Cat1" },
 				new Product { ProductID = 4, Name = "P4", Category = "Cat2" },
@@ -137,5 +137,32 @@ namespace SportsStore.UnitTests
 			Assert.AreEqual(resAll, 5);
 		}
 
+		[Test]
+		public void Can_Retrieve_Image_Date()
+		{
+			// Arrange
+			ProductController target = new ProductController(Mock.Object);
+
+			// Act
+			ActionResult result = target.GetImage(1);
+
+			// Assert
+			Assert.IsNotNull(result);
+			Assert.IsInstanceOf<FileResult>(result);
+			Assert.AreEqual("image/png", ((FileResult)result).ContentType);
+		}
+
+		[Test]
+		public void Cannot_Retrieve_Image_Data_For_Invalid_ID()
+		{
+			// Arrange
+			ProductController target = new ProductController(Mock.Object);
+
+			// Act
+			ActionResult result = target.GetImage(100);
+
+			// Assert
+			Assert.IsNull(result);
+		}
 	}
 }

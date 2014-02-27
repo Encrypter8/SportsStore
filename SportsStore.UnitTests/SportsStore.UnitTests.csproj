@@ -91,6 +91,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AdminControllerTests.cs" />
+    <Compile Include="AdminSecurityTests.cs" />
     <Compile Include="CartControllerTests.cs" />
     <Compile Include="HtmlHelperTests.cs" />
     <Compile Include="ProductControllerTests.cs" />

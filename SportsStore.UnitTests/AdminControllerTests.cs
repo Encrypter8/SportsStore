@@ -92,7 +92,7 @@ namespace SportsStore.UnitTests
 			Product product = new Product() { Name = "Test" };
 
 			// Act
-			ActionResult result = target.Edit(product);
+			ActionResult result = target.Edit(product, null);
 
 			// Assert
 			Mock.Verify(m => m.SaveProduct(product));
@@ -109,7 +109,7 @@ namespace SportsStore.UnitTests
 			target.ModelState.AddModelError("error", "error");
 
 			// act
-			ActionResult result = target.Edit(product);
+			ActionResult result = target.Edit(product, null);
 
 			// Assert
 			Mock.Verify(m => m.SaveProduct(It.IsAny<Product>()), Times.Never());

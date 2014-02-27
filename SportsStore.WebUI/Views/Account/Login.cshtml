@@ -1,0 +1,18 @@
+﻿@using SportsStore.WebUI.Models;
+
+@model LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Login</h1>
+
+<p>Please log in to access the administrative area:</p>
+@using (Html.BeginForm())
+{
+	@Html.ValidationSummary(true)
+	@Html.EditorForModel()
+	<p><input type="submit" value="Login" /></p>
+}
