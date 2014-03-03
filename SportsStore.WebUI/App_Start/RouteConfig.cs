@@ -13,6 +13,23 @@ namespace SportsStore.WebUI
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+			#region AdminController
+
+			routes.MapRoute(
+				name: null,
+				url: "Admin/Edit/{productId}",
+				defaults: new { controller = "Admin", action = "Edit" },
+				constraints: new { productId = @"\d+" }
+			);
+
+			routes.MapRoute(
+				name: null,
+				url: "Admin",
+				defaults: new { controller = "Admin", action = "Index" }
+			);
+
+			#endregion
+
 			#region ProductController
 			routes.MapRoute(
 				name: null,
@@ -39,17 +56,6 @@ namespace SportsStore.WebUI
 				defaults: new { controller = "Product", action = "List" },
 				constraints: new { page = @"\d+" }
 			);
-			#endregion
-
-			#region AdminController
-
-			routes.MapRoute(
-				name: null,
-				url: "Admin/Edit/{productId}",
-				defaults: new { controller = "Admin", action = "Edit" },
-				constraints: new { productId = @"\d+" }
-			);
-
 			#endregion
 
 			routes.MapRoute(
