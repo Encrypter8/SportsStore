@@ -1,12 +1,14 @@
 ﻿<!DOCTYPE html>
-<html>
+<html class="light">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @*@Styles.Render("~/Content/css")*@
     @*@Scripts.Render("~/bundles/modernizr")*@
-	<link href="~/Content/Site.css" type="text/css" rel="stylesheet" />
+	@*<link href="~/Content/Site.css" type="text/css" rel="stylesheet" />*@
+	@Styles.Render("~/Light")
+	@Styles.Render("~/Dark")
 </head>
 <body>
 	<div id="header">
