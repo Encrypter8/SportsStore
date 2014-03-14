@@ -20,6 +20,19 @@ namespace SportsStore.WebUI.HtmlHelpers
 		}
 
 		public static MvcHtmlString EditorFieldFor<TModel, TValue>(this HtmlHelper<TModel> htmlHelper,
+			Expression<Func<TModel, TValue>> expression, object htmlAttributes)
+		{
+			Dictionary<string, object> attrs = new Dictionary<string, object>();
+
+			foreach (KeyValuePair<string, object> kvp in new RouteValueDictionary(htmlAttributes))
+			{
+				attrs[kvp.Key] = kvp.Value;
+			}
+
+			return htmlHelper.EditorFieldFor(expression, attrs);
+		}
+
+		public static MvcHtmlString EditorFieldFor<TModel, TValue>(this HtmlHelper<TModel> htmlHelper,
 			Expression<Func<TModel, TValue>> expression, IDictionary<string, object> htmlAttributes)
 		{
 			if (expression == null) { throw new ArgumentNullException("expression"); }
