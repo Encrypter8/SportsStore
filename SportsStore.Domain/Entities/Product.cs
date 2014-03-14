@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 namespace SportsStore.Domain.Entities
@@ -8,6 +9,7 @@ namespace SportsStore.Domain.Entities
 		[HiddenInput(DisplayValue = false)]
 		public int ProductID { get; set; }
 
+		[DisplayName("Product Name")]
 		[Required(ErrorMessage = "Please enter a Product Name")]
 		public string Name { get; set; }
 
@@ -15,7 +17,7 @@ namespace SportsStore.Domain.Entities
 		[Required(ErrorMessage = "Please enter a Description")]
 		public string Description { get; set; }
 
-		[Required]
+		[Required(ErrorMessage = "Is Required")]
 		[Range(0.01, double.MaxValue, ErrorMessage = "Please enter a positive Price")]
 		public decimal Price { get; set; }
 

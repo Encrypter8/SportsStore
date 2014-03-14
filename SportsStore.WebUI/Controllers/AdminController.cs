@@ -50,11 +50,9 @@ namespace SportsStore.WebUI.Controllers
 				TempData["message"] = String.Format("{0} has been saved", product.Name);
 				return RedirectToAction("Index");
 			}
-			else
-			{
-				// there is something wrong with data value
-				return View(product);
-			}
+
+			// there is something wrong with data value
+			return View(product);
 		}
 
 		[HttpPost]

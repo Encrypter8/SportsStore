@@ -16,13 +16,21 @@ namespace SportsStore.Domain.Entities
 		public string City { get; set; }
 
 		[Required(ErrorMessage = "Please enter a staet")]
-		public string  State { get; set; }
+		public string State { get; set; }
 
 		public string Zip { get; set; }
 
 		[Required(ErrorMessage = "Please enter a country")]
-		public string  Country { get; set; }
+		public string Country { get; set; }
 
 		public bool GiftWrap { get; set; }
+
+		public ShippingType ShippingType { get; set; }
+	}
+
+	public enum ShippingType
+	{
+		Standard,
+		Express
 	}
 }
