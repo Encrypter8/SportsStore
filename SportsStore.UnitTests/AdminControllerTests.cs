@@ -2,7 +2,6 @@
 using SportsStore.Domain.Abstract;
 using SportsStore.Domain.Entities;
 using SportsStore.WebUI.Controllers;
-using SportsStore.WebUI.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;

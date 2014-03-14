@@ -5,8 +5,6 @@ using Moq;
 using System.Reflection;
 using NUnit.Framework;
 using SportsStore.WebUI;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace SportsStore.UnitTests
 {
