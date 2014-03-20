@@ -54,6 +54,11 @@ namespace SportsStore.WebUI
 			bundles.Add(new CustomStyleBundle("~/Dark").Include(
 				"~/Content/Dark.less"
 			));
+
+			bundles.Add(new StyleBundle("~/Logo").Include(
+				"~/Content/logo.css"
+			));
+
 		}
 	}
 }
