@@ -13,7 +13,7 @@ namespace SportsStore.WebUI
 		// For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
 		public static void RegisterBundles(BundleCollection bundles)
 		{
-			BundleTable.EnableOptimizations = false;
+			BundleTable.EnableOptimizations = true;
 
 			bundles.UseCdn = true;
 
