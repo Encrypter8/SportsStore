@@ -30,7 +30,7 @@ namespace SportsStore.WebUI.Controllers
 				{
 					CurrentPage = page,
 					itemsPerPage = PageSize,
-					TotalItems = category == null ? Repo.Products.Count() : Repo.Products.Where(p => p.Category == category).Count()
+					TotalItems = category == null ? Repo.Products.Count() : Repo.Products.Count(p => p.Category == category)
 				},
 				CurrentCategory = category
 			};
@@ -53,12 +53,7 @@ namespace SportsStore.WebUI.Controllers
 		{
 			Product product = Repo.Products.FirstOrDefault(p => p.ProductID == productId);
 
-			if (product != null)
-			{
-				return File(product.ImageData, product.ImageMimeType);
-			}
-
-			return null;
+			return product != null ? File(product.ImageData, product.ImageMimeType) : null;
 		}
 	}
 }

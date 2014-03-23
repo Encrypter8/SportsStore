@@ -1,0 +1,83 @@
+﻿[
+  {
+    "ProductID": 1,
+    "Name": "Kayak",
+    "Description": "A boat for one person",
+    "Price": 275,
+    "Category": "Watersports",
+    "ImageData": null,
+    "ImageMimeType": "image\/jpeg"
+  },
+  {
+    "ProductID": 2,
+    "Name": "Lifejacket",
+    "Description": "Protective and fashionable",
+    "Price": 48.95,
+    "Category": "Watersports",
+    "ImageData": null,
+    "ImageMimeType": null
+  },
+  {
+    "ProductID": 3,
+    "Name": "Soccer Ball",
+    "Description": "FIFA-approved size and weight",
+    "Price": 19.5,
+    "Category": "Soccer",
+    "ImageData": null,
+    "ImageMimeType": null
+  },
+  {
+    "ProductID": 4,
+    "Name": "Corner Flags",
+    "Description": "Give your playing field a professional touch",
+    "Price": 34.95,
+    "Category": "Soccer",
+    "ImageData": null,
+    "ImageMimeType": null
+  },
+  {
+    "ProductID": 5,
+    "Name": "Stadium",
+    "Description": "Flat-packed 35,000-seat stadium",
+    "Price": 79500,
+    "Category": "Soccer",
+    "ImageData": null,
+    "ImageMimeType": null
+  },
+  {
+    "ProductID": 6,
+    "Name": "Thinking Cap",
+    "Description": "Improve your brain efficiency by 75%",
+    "Price": 16,
+    "Category": "Chess",
+    "ImageData": null,
+    "ImageMimeType": null
+  },
+  {
+    "ProductID": 7,
+    "Name": "Unsteady Chair",
+    "Description": "Secretly give your opponent a disadvantage",
+    "Price": 29.95,
+    "Category": "Chess",
+    "ImageData": null,
+    "ImageMimeType": null
+  },
+  {
+    "ProductID": 8,
+    "Name": "Human Chess Board",
+    "Description": "A fun game for the family",
+    "Price": 75,
+    "Category": "Chess",
+    "ImageData": null,
+    "ImageMimeType": null
+  },
+  {
+    "ProductID": 9,
+    "Name": "Bling-Bling King",
+    "Description": "Gold-plated, diamond-studded King",
+    "Price": 1200,
+    "Category": "Chess",
+    "ImageData": null,
+    "ImageMimeType": null
+  }
+]
