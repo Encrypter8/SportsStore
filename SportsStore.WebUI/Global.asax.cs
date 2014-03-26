@@ -1,5 +1,7 @@
-﻿using SportsStore.Domain.Entities;
+﻿using System.Web;
+using SportsStore.Domain.Entities;
 using SportsStore.WebUI.Binders;
+using SportsStore.WebUI.Controllers;
 using SportsStore.WebUI.Infrastructure;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -25,6 +27,21 @@ namespace SportsStore.WebUI
 			// custom
 			ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
 			ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
+		}
+
+		protected void Application_EndRequest()
+		{
+			if (Context.Response.StatusCode == 404)
+			{
+				Response.Clear();
+
+				var rd = new RouteData();
+				rd.Values["controller"] = "Errors";
+				rd.Values["action"] = "NotFound404";
+
+				IController c = new ErrorsController();
+				c.Execute(new RequestContext(new HttpContextWrapper(Context), rd)); 
+			}
 		}
 	}
 }

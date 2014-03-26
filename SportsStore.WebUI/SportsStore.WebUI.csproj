@@ -176,7 +176,10 @@
     <Compile Include="Binders\CartModelBinder.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BasicController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\DerivedController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -185,6 +188,7 @@
     </Compile>
     <Compile Include="HtmlHelpers\DisplayForHelpers.cs" />
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="Infrastructure\CustomRedirectResult.cs" />
     <Compile Include="Infrastructure\FormsAuthProvider.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -326,6 +330,8 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Test\DataTypes.cshtml" />
+    <Content Include="Views\Derived\MyView.cshtml" />
+    <Content Include="Views\Errors\NotFound404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
