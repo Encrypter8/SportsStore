@@ -6,7 +6,7 @@ using SportsStore.WebUI.Models;
 
 namespace SportsStore.WebUI.Controllers
 {
-	public class ProductController : Controller
+	public class ProductController : BaseController
 	{
 		private IProductRepository Repo;
 
@@ -54,6 +54,13 @@ namespace SportsStore.WebUI.Controllers
 			Product product = Repo.Products.FirstOrDefault(p => p.ProductID == productId);
 
 			return product != null ? File(product.ImageData, product.ImageMimeType) : null;
+		}
+
+		public ActionResult GetPartialView()
+		{
+			var product = Repo.Products.FirstOrDefault();
+
+			return PartialViewAsJson("ProductSummary", product);
 		}
 	}
 }
