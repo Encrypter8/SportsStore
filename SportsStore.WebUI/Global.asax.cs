@@ -25,6 +25,7 @@ namespace SportsStore.WebUI
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 			// custom
+			//AutoFacConfig.Config(); // getting some weird as fuck runtime error, cannot find a solution. fuck me
 			ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
 			ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
 		}
