@@ -1,5 +1,6 @@
 ﻿using Moq;
 using Ninject;
+using SportsStore.Domain;
 using SportsStore.Domain.Abstract;
 using SportsStore.Domain.Concrete;
 using SportsStore.Domain.Entities;
@@ -42,7 +43,14 @@ namespace SportsStore.WebUI.Infrastructure
 
 			//NinjectKernel.Bind<IProductRepository>().ToConstant(mock.Object);
 
-			NinjectKernel.Bind<IProductRepository>().To<EFProductRepository>();
+			if (Globals.IsWorkMachine)
+			{
+				NinjectKernel.Bind<IProductRepository>().To<TestProductRepository>();
+			}
+			else
+			{
+				NinjectKernel.Bind<IProductRepository>().To<EFProductRepository>();
+			}
 
 			EmailSettings emailSettings = new EmailSettings()
 			{

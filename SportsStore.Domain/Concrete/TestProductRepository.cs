@@ -27,7 +27,7 @@ namespace SportsStore.Domain.Concrete
 
 		private IQueryable<Product> GetProductsFromFile()
 		{
-			string path = @"C:\Users\Harris\Documents\Visual Studio 2012\Projects\ProAspMvc4\SportsStore\SportsStore.Domain\MockData\Products.json";
+			string path = Globals.LocalPath + @"SportsStore.Domain\MockData\Products.json";
 
 			string output;
 

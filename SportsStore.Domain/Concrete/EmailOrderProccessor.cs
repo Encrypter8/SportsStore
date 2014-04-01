@@ -3,6 +3,7 @@ using System.Net.Mail;
 using System.Net;
 using SportsStore.Domain.Abstract;
 using SportsStore.Domain.Entities;
+using System;
 
 namespace SportsStore.Domain.Concrete
 {
@@ -16,7 +17,7 @@ namespace SportsStore.Domain.Concrete
 		public string ServerName = "smtp.example.com";
 		public int ServerPort = 587;
 		public bool WriteAsFile = false;
-		public string FileLocation = @"C:\Users\Harris\Documents\Visual Studio 2012\Projects\ProAspMvc4\SportsStore\EmailFiles";
+		public string FileLocation = Globals.LocalPath + "EmailFiles";
 	}
 
 	public class EmailOrderProcessor : IOrderProcessor
