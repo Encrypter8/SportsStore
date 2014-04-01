@@ -195,7 +195,7 @@
     </Compile>
     <Compile Include="HtmlHelpers\DisplayForHelpers.cs" />
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
-    <Compile Include="Infrastructure\AutoFacConfig.cs" />
+    <Compile Include="App_Start\AutoFacConfig.cs" />
     <Compile Include="Infrastructure\CustomRedirectResult.cs" />
     <Compile Include="Infrastructure\FormsAuthProvider.cs">
       <SubType>Code</SubType>

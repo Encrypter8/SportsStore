@@ -45,7 +45,7 @@ namespace SportsStore.WebUI.Infrastructure
 
 			if (Globals.IsWorkMachine)
 			{
-				NinjectKernel.Bind<IProductRepository>().To<TestProductRepository>();
+				NinjectKernel.Bind<IProductRepository>().To<MockProductRepository>();
 			}
 			else
 			{

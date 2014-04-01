@@ -9,8 +9,10 @@ using Autofac.Integration.Mvc;
 using SportsStore.Domain.Abstract;
 using SportsStore.Domain.Concrete;
 using System.Configuration;
+using SportsStore.Domain;
+using SportsStore.WebUI.Infrastructure;
 
-namespace SportsStore.WebUI.Infrastructure
+namespace SportsStore.WebUI
 {
 	public static class AutoFacConfig
 	{
@@ -29,9 +31,12 @@ namespace SportsStore.WebUI.Infrastructure
 				.InstancePerHttpRequest();
 
 			// Register Repository overrides
-			// (Great for when you want to use MockRepository
-			//builder.RegisterType<MockProductRepository>().As<IProductRepository>()
-			//	.InstancePerHttpRequest();
+			// (Great for when you want to use MockRepository)
+			if (Globals.IsWorkMachine)
+			{
+				builder.RegisterType<MockProductRepository>().As<IProductRepository>()
+					.InstancePerHttpRequest();
+			}
 
 			// Register Providers
 			// also with convention

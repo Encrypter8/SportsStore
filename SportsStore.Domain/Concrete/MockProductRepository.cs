@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace SportsStore.Domain.Concrete
 {
-	public class TestProductRepository : IProductRepository
+	public class MockProductRepository : IProductRepository
 	{
 		public IQueryable<Product> Products { get { return GetProductsFromFile(); } }
 

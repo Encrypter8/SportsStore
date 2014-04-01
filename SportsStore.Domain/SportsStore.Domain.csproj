@@ -86,7 +86,7 @@
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFProductRepository.cs" />
     <Compile Include="Concrete\EmailOrderProccessor.cs" />
-    <Compile Include="Concrete\TestProductRepository.cs" />
+    <Compile Include="Concrete\MockProductRepository.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\DataTypes.cs" />
     <Compile Include="Entities\Product.cs" />
