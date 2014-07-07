@@ -17,10 +17,13 @@ namespace SportsStore.WebUI
 
 			bundles.UseCdn = true;
 
-			bundles.Add(new CustomScriptBundle("~/bundles/jquery").Include(
-						"~/Scripts/jquery-{version}.js",
-						"~/Scripts/jquery.unobtrusive*",
-						"~/Scripts/jquery.validate*"));
+			bundles.Add(
+				new CustomScriptBundle("~/bundles/jquery").Include(
+					"~/Scripts/jquery-{version}.js",
+					"~/Scripts/jquery.unobtrusive*"
+					//"~/Scripts/jquery.validate*"
+				)
+			);
 
 			bundles.Add(new CustomScriptBundle("~/bundles/jqueryui").Include(
 						"~/Scripts/jquery-ui-{version}.js"));

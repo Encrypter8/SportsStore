@@ -10,9 +10,9 @@
 <h1>Edit @Model.Name</h1>
 
 @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" })) {
-	@Html.EditorFieldFor(m => m.Name, new { type = "text" })
+	@*@Html.EditorFieldFor(m => m.Name, new { type = "text" })
 	<br />
-	<br />
+	<br />*@
 	
 	@Html.EditorForModel()
 
